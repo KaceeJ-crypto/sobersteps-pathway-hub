@@ -1,0 +1,78 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sober Journal Prompts: Day 22 • Sober Steps Pathway Hub</title>
+  <meta name="description" content="A focused prompt to reflect and build momentum.">
+  <link rel="canonical" href="https://sacredspacefoundationatlanta.org/sober-journal-prompts-day-22.html">
+  <link rel="stylesheet" href="/static/style.css">
+  <meta property="og:title" content="Sober Journal Prompts: Day 22 • Sober Steps Pathway Hub">
+  <meta property="og:description" content="A focused prompt to reflect and build momentum.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sacredspacefoundationatlanta.org/sober-journal-prompts-day-22.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+<canvas id="matrix-canvas"></canvas>
+<header>
+  <nav>
+    <a class="brand" href="/index.html">Sober Steps Pathway Hub</a>
+    <a href="/categories.html">Categories</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/feed.xml">RSS</a>
+  </nav>
+</header>
+<main>
+  
+</main>
+<footer>
+  <small>© 2025 Sober Steps Pathway Hub • Created by Kacee J</small>
+</footer>
+<script>
+// Matrix rain (purple, green, pink) on black
+(function(){
+  const canvas = document.getElementById('matrix-canvas');
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  const letters = "アァカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const fontSize = 16;
+  let columns = Math.floor(canvas.width / fontSize);
+  let drops = Array(columns).fill(1);
+  function color(step){
+    // cycle purple -> green -> pink
+    const palette = ["#9b59ff","#18ff92","#ff66cc"];
+    return palette[step % palette.length];
+  }
+  let tick=0;
+  function draw(){
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.font = fontSize + "px monospace";
+    for(let i=0; i<drops.length; i++){
+      const txt = letters[Math.floor(Math.random()*letters.length)];
+      ctx.fillStyle = color(tick+i);
+      ctx.fillText(txt, i*fontSize, drops[i]*fontSize);
+      if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){ drops[i]=0; }
+      drops[i]++;
+    }
+    tick++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

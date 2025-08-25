@@ -1,0 +1,31 @@
+
+:root { --max: 980px; --card: #ffffff; --ink: #111; --muted:#777; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+*{box-sizing:border-box}
+html, body { height:100%; margin:0; background:#000; color:#eee; }
+a { color:#9bf; text-decoration:none; }
+a:hover { text-decoration:underline; }
+header { position:sticky; top:0; z-index:3; background:rgba(0,0,0,.7); backdrop-filter: blur(6px); border-bottom:1px solid rgba(255,255,255,.08); }
+nav { max-width:var(--max); margin:0 auto; padding:0.8rem 1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+nav a.brand { font-weight:800; letter-spacing:.3px; }
+main { position:relative; z-index:2; max-width:var(--max); margin:0 auto; padding: 1.25rem; }
+footer { position:relative; z-index:2; padding:1rem; border-top:1px solid rgba(255,255,255,.08); background:rgba(0,0,0,.6); }
+.card { background: var(--card); color: var(--ink); border-radius:16px; padding:1rem 1.2rem; box-shadow:0 10px 25px rgba(0,0,0,.35); }
+.grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); }
+.hero { margin-top: 8px; margin-bottom: 16px; }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); margin:0; color:#fff; text-shadow: 0 0 10px #6a00ff, 0 0 18px #1aff8c; }
+.hero p { color:#d8d8d8; margin:.4rem 0 1rem; }
+.badge { display:inline-block; padding:.15rem .5rem; border-radius:999px; border:1px solid #ddd; font-size:.8rem; background:#f5f5f7; }
+.meta { color:#666; font-size:.9rem; }
+.search { margin: 1rem 0; }
+input[type="search"]{ width:100%; padding:.7rem .9rem; border-radius:12px; border:1px solid #333; background:#0b0b0d; color:#fff; }
+.article img { width:100%; border-radius:12px; }
+.breadcrumbs { color:#b9b9b9; font-size:.9rem; margin-bottom:.5rem; }
+.small { font-size:.9rem; color:var(--muted); }
+.affiliate-card { border:1px dashed #aaa; border-radius:10px; padding:.8rem; background:#0a0a0a; color:#f1f1f1; }
+.affiliate-card a{ color:#9bf; }
+hr { border: none; border-top:1px solid #ececec; margin:1.2rem 0; }
+.notice { background:#080a0f; color:#cce7ff; border:1px solid #122; border-radius:10px; padding:.7rem .9rem; }
+
+/* Matrix rain background using canvas overlay */
+#matrix-canvas { position:fixed; inset:0; z-index:0; background:#000; }
+.glow { text-shadow: 0 0 8px #e600ff, 0 0 16px #00ff88; }
